@@ -1,45 +1,67 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "The Prison System Reveals the Pattern of Inequality"
+author: "Rachel He"
+date: '2022-11-17'
 output: html_document
 ---
-
-```{r echo=FALSE, eval=TRUE, message=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
+
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+This report aims to thoroughly examine dataset on incarceration trend from 1970 to 2018 and reflects on current community circumstances. Later will reveal the whether there is inequality reflected by the dataset, mainly focus on the incarceration difference between different states, years, or races.
 
 ## Introduction 
-[TODO]
+> Majorities of both black and white Americans say black people are treated less fairly than whites in dealing with the police and by the criminal justice system as a whole.
+>
+> -- Drew Desilver, Michael Lipka and Dalia Fahmy
+
+George Floyd's death in the custody of Minneapolis police brought attention to the issue of police attitudes toward black Americans. More doubts about the judiciary were then revealed: **How prison system reflects Racism?** In today's society, power is not distributed equally. In this case, racial oppression takes the form of white supremacy, when white accrues power and privilege at the expense of others as a dominant group. 
+
+I, as one of the direct stakeholders of research of this dataset, am able to analyze the figurative reflection on prison system by engaging the central value of providing a transparent and caring country which provides benefits to everyone equally to the community. The policymakers would be one of the indirect stakeholders who can understand the disproportionate incarceration of people of color and introduce relevant regislation to protect the interest of specific groups of people, aims to achieve higher degree of equality. 
+
+- Do blacks have a higher incarceration rate than other races?
+- Which area in the United States contains the highest incarceration population?
 
 ## Data Summary 
-[TODO]
+In 2018, the average proportion of black people held in jail across all counties is *0.349*. The proportion of black people population is *0.092*, and the county which has the highest proportion of black people held in jail is *Caswell County*, which contains about 32.9% of residents as black. When focusing on the variables total black population total jail population and black jail population, the average proportion of black people in jail and the proportion of black people population, we can conclude that it is an extremely high proportion of black people to go to jail since their proportion of population is not that high. It is an evidence that there is inequality in prison system. 
 
-[TODO ... other sections ... See Canvas for details]
+## Growth of the U.S. Prison Population bewteen 1970 and 2018
+```{r echo=FALSE}
+plot_jail_pop_for_us()
+```
 
-_All the very best with your work!_
+### Summary: What trends are presented in this dataset?
+The total jail population from 1970 to 2018 has an overall increasing trend since 1980, before that there are no noticeable changes, reaches its highest point in 2008 and showing a slow downward trend after that. The peak is about 5 times more than its original value.
 
+## Growth of Prison Population by State
+
+```{r echo=FALSE}
+
+states_vector <- c("NY","CA","NC")
+plot_jail_pop_by_states(states_vector)
+
+```
+### Summary: What is the pattern from these three states selected?
+As the most diverse state, California's jail population increases dramatically, it has the most similar shape with the U.S. jail population. New York state is in the middle while its total jail population increases and then decrease in a moderate rate. The jail population in NC is increasing all the way.
+
+## Multiplicity ratio between black's jail proportion and white's jail proportion
+
+```{r echo=FALSE}
+plot_black_jail_prop()
+```
+
+### Summary: What can be hypothesized from the visualization?
+The proportion of black people to be in jail is much more higher than the proportion of white people. The ratio reaches its peak at 7, which means the proportion of black people to be in jail is 7 times more than the proportion of white people. In addition, after 1993, the ratio is downward sloping, which means the disproportionate circumstance is not that worse, but is still higher than 1, there is still inequality.
+
+## Map distribution 
+```{r echo=FALSE}
+map_chart()
+
+```
+
+### Summary: What does the color code tells us?
+There are several states fill with grey color which indicates they are out of available data. In the map, states fill with light pink means the multiplicity ratio between the proportion of black people to be in jail and the proportion of white people is relatively small. Conversely, the states fill with bright red indicate the ratio is large, there is severe disproportion exists.
