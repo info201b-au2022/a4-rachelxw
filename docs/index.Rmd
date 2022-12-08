@@ -54,7 +54,7 @@ As the most diverse state, California's jail population increases dramatically, 
 plot_black_jail_prop()
 ```
 
-### Summary: What can be hypothesized from the visualization?
+### Summary: Is the proportion of black people to be in jail relatively higher than the proportion of white?
 The proportion of black people to be in jail is much more higher than the proportion of white people. The ratio reaches its peak at 7, which means the proportion of black people to be in jail is 7 times more than the proportion of white people. In addition, after 1993, the ratio is downward sloping, which means the disproportionate circumstance is not that worse, but is still higher than 1, there is still inequality.
 
 ## Map distribution 
@@ -63,5 +63,5 @@ map_chart()
 
 ```
 
-### Summary: What does the color code tells us?
-There are several states fill with grey color which indicates they are out of available data. In the map, states fill with light pink means the multiplicity ratio between the proportion of black people to be in jail and the proportion of white people is relatively small. Conversely, the states fill with bright red indicate the ratio is large, there is severe disproportion exists.
+### Summary: Do states in the middle of the U.S. have tendency to be more disproportionate?
+There are several states fill with grey color which indicates they are out of available data. In the map, states fill with light pink means the multiplicity ratio between the proportion of black people to be in jail and the proportion of white people is relatively small. Conversely, the states fill with bright red indicate the ratio is large, there is severe disproportion exists. The states in the middle and northeast of the U.S. are more disproportionate.
